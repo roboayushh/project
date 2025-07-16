@@ -21,8 +21,11 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('Login attempt:', formData);
+    // Simple authentication - in real app, validate against backend
+    if (formData.email && formData.password) {
+      localStorage.setItem('isLoggedIn', 'true');
+      window.location.href = '/dashboard';
+    }
   };
 
   return (
